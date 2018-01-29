@@ -32,7 +32,7 @@ endif()
 
 # v4l2wrapper
 include_directories("v4l2wrapper/inc")
-find_library(V4L2WRAPPER_LIBRARY libv4l2wrapper.a PATHS "." NO_CMAKE_FIND_ROOT_PATH)
+find_library(V4L2WRAPPER_LIBRARY libv4l2wrapper.a)
 if (NOT V4L2WRAPPER_LIBRARY)
         message(STATUS "Installing v4l2wrapper")
         EXEC_PROGRAM("git submodule init && git submodule update && make -C v4l2wrapper CC=${CMAKE_C_COMPILER} PREFIX=${CMAKE_FIND_ROOT_PATH} && cp v4l2wrapper/libv4l2wrapper.a . && make -C v4l2wrapper clean")
